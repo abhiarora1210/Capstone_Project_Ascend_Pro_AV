@@ -1,0 +1,104 @@
+Model Params:
+
+{
+    "ccp_alpha": 0.0,
+    "class_weight": {
+        "0": 0.55
+    },
+    "criterion": "entropy",
+    "max_depth": 10,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_impurity_split": null,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "random_state": 786,
+    "splitter": "best"
+}
+
+GridSearchCV Params:
+
+{
+    "cv": 5,
+    "error_score": NaN,
+    "estimator__ccp_alpha": 0.0,
+    "estimator__class_weight": null,
+    "estimator__criterion": "gini",
+    "estimator__max_depth": null,
+    "estimator__max_features": null,
+    "estimator__max_leaf_nodes": null,
+    "estimator__min_impurity_decrease": 0.0,
+    "estimator__min_impurity_split": null,
+    "estimator__min_samples_leaf": 1,
+    "estimator__min_samples_split": 2,
+    "estimator__min_weight_fraction_leaf": 0.0,
+    "estimator__random_state": 786,
+    "estimator__splitter": "best",
+    "estimator": "DecisionTreeClassifier(random_state=786)",
+    "n_jobs": null,
+    "param_grid": {
+        "max_depth": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "criterion": [
+            "gini",
+            "entropy"
+        ],
+        "max_features": [
+            "sqrt",
+            "log2"
+        ],
+        "class_weight": [
+            {
+                "0": 0.5
+            },
+            {
+                "0": 0.55
+            },
+            {
+                "0": 0.6
+            },
+            {
+                "0": 0.65
+            },
+            {
+                "0": 0.7
+            },
+            {
+                "0": 0.75
+            },
+            {
+                "0": 0.8
+            },
+            {
+                "0": 0.8500000000000001
+            },
+            {
+                "0": 0.9
+            }
+        ]
+    },
+    "pre_dispatch": "2*n_jobs",
+    "refit": "precision",
+    "return_train_score": true,
+    "scoring": [
+        "accuracy",
+        "recall",
+        "precision"
+    ],
+    "verbose": true
+}
+
+Comments:
+
+Grid search was done on smoted data (SMOTE(random_state=0)). Then the predictions were made directly using the best estimator
+from the grid search, for original (scaled and encoded) 1108 row dataset.
